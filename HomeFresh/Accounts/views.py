@@ -104,10 +104,12 @@ class CheckUsernameView(APIView):
 class VerifyOTPView(APIView):
 
     def post(self, request):
-        username = request.data.get('username')
+        email = request.data.get('email')
         otp = request.data.get('otp')
+        print('otp',otp, 
+            'email',email)
 
-        user = CustomUser.objects.filter(username=username).first()
+        user = CustomUser.objects.filter(email=email).first()
 
         if not user:
             return Response({"detail": "User not found."}, status=status.HTTP_400_BAD_REQUEST)

@@ -28,7 +28,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',
+]
+CORS_ALLOW_CREDENTIALS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt',
     'Accounts',
     'corsheaders',
     'rest_framework_simplejwt.token_blacklist',
@@ -85,11 +89,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'HomeFresh',
         'USER': 'postgres',
-        'PASSWORD': 'ROOT',
+        'PASSWORD': '123',
         'HOST': 'localhost',
         'PORT': '5432',
     }
 }
+
 
 REST_FRAMEWORK = {
      'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -148,9 +153,17 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # smtp configuration
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST='smtp.gmail.com'
+# EMAIL_PORT=587
+# EMAIL_HOST_USER='rase64853@gmail.com'
+# EMAIL_HOST_PASSWORD='lhbtwbjvyjuntapr'
+# EMAIL_USE_TLS=True
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_HOST_USER='rase64853@gmail.com'
-EMAIL_HOST_PASSWORD='lhbtwbjvyjuntapr'
-EMAIL_USE_TLS=True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'edunest74@gmail.com'  # Replace with your Gmail address
+EMAIL_HOST_PASSWORD = 'gfqa mnhm uzyg grwz'  # Replace with your Gmail password or app password
+EMAIL_USE_TLS = True
+

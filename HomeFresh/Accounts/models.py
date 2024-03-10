@@ -7,7 +7,7 @@ class CustomUser(AbstractUser):
     is_verified = models.BooleanField(default=False)
     otp = models.CharField(max_length=6, blank=True, null=True)
     otp_created_at = models.DateTimeField(blank=True, null=True)
-    email = models.EmailField(unique=True)  # Added email field
+    email = models.EmailField()  # Added email field
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 

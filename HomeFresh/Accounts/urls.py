@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.urls import path,include
 from .views import *
 from rest_framework_simplejwt import views as jwt_views
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework.routers import DefaultRouter
 
 
